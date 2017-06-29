@@ -1,6 +1,7 @@
 ﻿using HotelManagementSystem.Data;
 using HotelManagementSystem.Data.EFLogging;
 using HotelManagementSystem.Domain;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,59 +17,68 @@ namespace SomeUI
         private static HotelContext _context = new HotelContext();
         static void Main(string[] args)
         {
+            _context.Database.EnsureCreated();
             _context.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
 
-            //AddRoom();
-            //AddMultipleRooms();
-            //SimpleRoomQuery();
-            //
-            MoreQueries();
+            // InsertNewPkFkGraph();
+            // ModuleForMethods.RunAll();
+            //AddRooms();
+            // AddManyToManyWithFks();
+            //AddManyToManyWithObjects();
+            // Console.WriteLine("test");
+
+            //AnonymousTypeViaProjectiom();
+            DisconnectedMethods.AddGraphAllNew();
             Console.ReadKey();
+           
         }
 
-        private static void MoreQueries()
+        private static void AnonymousTypeViaProjectiom()
         {
-            var rooms = _context.Rooms.Where(r => r.Capacity == 3).ToList();
-            foreach (var room in rooms)
-            {
-                Console.WriteLine(room.Description);
-            }
+            _context = new HotelContext();
+            var clients = _context.Clients
+                .Select(c => new { c.Id, c.FirstName }).ToList();
         }
 
-        private static void AddMultipleRooms()
+        private static void AddManyToManyWithObjects()
         {
-            var roomForThree = new Room {Capacity = 3, Description = "For 3 People" };
-            var roomForFour = new Room { Capacity = 4, Description = "For 4 People" };
+            _context = new HotelContext();
+            var client = _context.Clients.FirstOrDefault();
+            var room = _context.Rooms.FirstOrDefault();
 
-            using (var context = new HotelContext())
-            {
-                context.Rooms.AddRange(new List<Room> { roomForThree, roomForFour });
-                context.SaveChanges();
-            }
+            _context.ClientRooms.Add(new ClientRoom { Client = client, Room = room });
+            _context.SaveChanges();
         }
-        private static void AddRoom()
-        {
-            var roomForTwo = new Room { Description = "For 2 People" };
 
-            using (var context = new HotelContext())
-            {
-                context.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
-                context.Rooms.Add(roomForTwo);
-                context.SaveChanges();
-            }
-        }
-        private static void SimpleRoomQuery()
+        private static void AddManyToManyWithFks()
         {
-            using (var context = new HotelContext())
-            {
-                var rooms = context.Rooms.ToList();
-                var query = context.Rooms;
-                var roomsAgain = query.ToList();
-                foreach (var room in rooms)
-                {
-                    Console.WriteLine(room.Description);
-                }
-            }
+            _context = new HotelContext();
+            var sb = new ClientRoom { ClientId = 1, RoomId = 1, DateStarded = new DateTime(2017,05,05), DateEnded = new DateTime(2017,06,12) };
+            _context.ClientRooms.Add(sb);
+            _context.SaveChanges();
         }
+
+        private static void InsertNewPkFkGraph()
+        {
+            _context.Clients.AddRange(new Client
+            {
+                FirstName = "John",
+                LastName = "Eclipse"
+            },
+            new Client { FirstName = "Elon", LastName = "Musk" }
+            );
+            _context.SaveChanges();
+        }
+        private static void AddRooms()
+        {
+            _context.Rooms.AddRange(
+                 new Room { Capacity = 4, Description = "Yolo"} ,
+                 new Room { Capacity = 5, Description = "Siemko"}
+
+                );
+            _context.SaveChanges();
+        }
+
+
     }
 }

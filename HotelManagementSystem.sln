@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeUI", "SomeUI\SomeUI.csproj", "{3DD0EE8C-24A8-40C5-A6CD-B87546E7FA60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMSWpfUI", "HMSWpfUI\HMSWpfUI.csproj", "{61560CA9-0C29-460B-A3B5-3D3FECE3ADE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3DD0EE8C-24A8-40C5-A6CD-B87546E7FA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DD0EE8C-24A8-40C5-A6CD-B87546E7FA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DD0EE8C-24A8-40C5-A6CD-B87546E7FA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61560CA9-0C29-460B-A3B5-3D3FECE3ADE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61560CA9-0C29-460B-A3B5-3D3FECE3ADE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61560CA9-0C29-460B-A3B5-3D3FECE3ADE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61560CA9-0C29-460B-A3B5-3D3FECE3ADE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

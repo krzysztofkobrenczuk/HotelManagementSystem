@@ -21,11 +21,9 @@ namespace HotelManagementSystem.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("DateEnded");
-
-                    b.Property<DateTime>("DateStarded");
-
                     b.Property<string>("FirstName");
+
+                    b.Property<DateTime>("LastModified");
 
                     b.Property<string>("LastName");
 
@@ -42,11 +40,17 @@ namespace HotelManagementSystem.Data.Migrations
 
                     b.Property<int>("RoomId");
 
+                    b.Property<DateTime>("DateEnded");
+
+                    b.Property<DateTime>("DateStarded");
+
+                    b.Property<DateTime>("LastModified");
+
                     b.HasKey("ClientId", "RoomId");
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("ClientRoom");
+                    b.ToTable("ClientRooms");
                 });
 
             modelBuilder.Entity("HotelManagementSystem.Domain.Room", b =>
@@ -59,6 +63,8 @@ namespace HotelManagementSystem.Data.Migrations
                     b.Property<string>("Description");
 
                     b.Property<bool>("IsReserved");
+
+                    b.Property<DateTime>("LastModified");
 
                     b.Property<double>("PricePerDay");
 

@@ -149,6 +149,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectedData.cs" />
     <Compile Include="HotelContext.cs" />
     <Compile Include="Migrations\20170628150622_Init.cs" />
     <Compile Include="Migrations\20170628150622_Init.designer.cs">
@@ -157,6 +158,22 @@
     <Compile Include="Migrations\20170629092648_JoinTable.cs" />
     <Compile Include="Migrations\20170629092648_JoinTable.designer.cs">
       <DependentUpon>20170629092648_JoinTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170629113557_JoinNewTable.cs" />
+    <Compile Include="Migrations\20170629113557_JoinNewTable.designer.cs">
+      <DependentUpon>20170629113557_JoinNewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170629115346_changeTableClientRoom.cs" />
+    <Compile Include="Migrations\20170629115346_changeTableClientRoom.designer.cs">
+      <DependentUpon>20170629115346_changeTableClientRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170629115640_changeTableClientRooms.cs" />
+    <Compile Include="Migrations\20170629115640_changeTableClientRooms.designer.cs">
+      <DependentUpon>20170629115640_changeTableClientRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170629123313_shadowproeprty.cs" />
+    <Compile Include="Migrations\20170629123313_shadowproeprty.designer.cs">
+      <DependentUpon>20170629123313_shadowproeprty.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\HotelContextModelSnapshot.cs" />
     <Compile Include="MyLoggerProvider.cs" />

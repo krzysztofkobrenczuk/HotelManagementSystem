@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagementSystem.Domain
 {
-    public class Room
+    public class Room  : ClientChangeTracker
     {
         public int Id { get; set; }
         public string Description { get; set; }

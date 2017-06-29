@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HMSWpfUI"
+        xmlns:local="clr-namespace:HMSWpfUI"           
         xmlns:Domain="clr-namespace:HotelManagementSystem.Domain;assembly=HotelManagementSystem.Domain" x:Class="HMSWpfUI.Rooms"
         mc:Ignorable="d"
         Title="Rooms" Height="409" Width="596" Loaded="Window_Loaded">

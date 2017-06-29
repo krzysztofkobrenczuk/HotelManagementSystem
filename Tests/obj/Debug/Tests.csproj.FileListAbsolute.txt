@@ -1,0 +1,6 @@
+c:\users\senex\documents\visual studio 2015\Projects\HotelManagementSystem\Tests\bin\Debug\Tests.dll
+c:\users\senex\documents\visual studio 2015\Projects\HotelManagementSystem\Tests\bin\Debug\Tests.pdb
+c:\users\senex\documents\visual studio 2015\Projects\HotelManagementSystem\Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\senex\documents\visual studio 2015\Projects\HotelManagementSystem\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+c:\users\senex\documents\visual studio 2015\Projects\HotelManagementSystem\Tests\obj\Debug\Tests.dll
+c:\users\senex\documents\visual studio 2015\Projects\HotelManagementSystem\Tests\obj\Debug\Tests.pdb
